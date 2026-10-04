@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <meta name="theme-color" content="#07111f" />
+
+  <title>دعوة تخرج | الهوية الجامعية</title>
+
+  <meta
+    name="description"
+    content="دعوة تخرج رقمية تفاعلية مستوحاة من الهوية الجامعية."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="دعوة تخرج" />
+  <meta
+    property="og:description"
+    content="يسرنا دعوتكم لمشاركتنا فرحة التخرج."
+  />
+  <meta property="og:image" content="graduate-id.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="دعوة تخرج" />
+  <meta
+    name="twitter:description"
+    content="يسرنا دعوتكم لمشاركتنا فرحة التخرج."
+  />
+  <meta name="twitter:image" content="graduate-id.jpg" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP -->
+  <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+  ></script>
+
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <noscript>
+    <div class="noscript-message">
+      هذه الدعوة تحتاج JavaScript لعرض التأثيرات التفاعلية،
+      لكن يمكنك الاستمرار وقراءة معلومات الحفل أدناه.
+    </div>
+  </noscript>
+
+  <main class="site-shell">
+
+    <!-- ======================================================
+         HERO / ID EXPERIENCE
+    ======================================================= -->
+
+    <section class="identity-section" id="identity">
+
+      <div class="ambient-grid" aria-hidden="true"></div>
+
+      <div class="hero-header">
+
+        <div class="system-kicker">
+          <span class="system-dot"></span>
+          نظام الهوية الأكاديمية
+        </div>
+
+        <p class="hero-eyebrow">
+          سجل جامعي رسمي
+        </p>
+
+      </div>
+
+
+      <!-- ID CARD STAGE -->
+
+      <div class="id-stage">
+
+        <div class="id-card" id="idCard">
+
+          <div class="card-perspective">
+
+            <div class="card-inner" id="cardInner">
+
+              <!-- ==================================================
+                   STUDENT SIDE
+              =================================================== -->
+
+              <article class="card-face student-face">
+
+                <div class="hologram" aria-hidden="true"></div>
+
+                <div class="card-top">
+
+                  <div class="university-mark">
+
+                    <img
+                      class="university-logo"
+                      id="universityLogoStudent"
+                      alt=""
+                      hidden
+                    />
+
+                    <div class="seal-fallback" aria-hidden="true">
+                      <span>U</span>
+                    </div>
+
+                  </div>
+
+                  <div class="university-copy">
+                    <span class="micro-label">
+                      الجهة الأكاديمية
+                    </span>
+
+                    <strong data-graduation="university">
+                      جامعة الموصل
+                    </strong>
+                  </div>
+
+                  <div class="card-chip">
+                    ID
+                  </div>
+
+                </div>
+
+
+                <div class="student-body">
+
+                  <div class="portrait-frame">
+
+                    <img
+                      src="graduate-id.jpg"
+                      alt="صورة الخريج"
+                      class="graduate-photo"
+                    />
+
+                    <div class="portrait-corners" aria-hidden="true">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+
+                  </div>
+
+
+                  <div class="student-data">
+
+                    <div class="identity-field identity-name">
+
+                      <span class="field-label">
+                        اسم الطالب
+                      </span>
+
+                      <strong data-graduation="graduateName">
+                        عمر الكريم
+                      </strong>
+
+                    </div>
+
+
+                    <div class="data-grid">
+
+                      <div class="identity-field">
+                        <span class="field-label">
+                          الكلية
+                        </span>
+
+                        <span data-graduation="faculty">
+                          كلية الطب
+                        </span>
+                      </div>
+
+
+                      <div class="identity-field">
+                        <span class="field-label">
+                          الدرجة
+                        </span>
+
+                        <span data-graduation="degree">
+                          بكالوريوس طب وجراحة عامة
+                        </span>
+                      </div>
+
+
+                      <div class="identity-field">
+
+                        <span class="field-label">
+                          الحالة الأكاديمية
+                        </span>
+
+                        <span class="status-pill student-status">
+                          طالب
+                        </span>
+
+                      </div>
+
+
+                      <div class="identity-field">
+
+                        <span class="field-label">
+                          سنة التخرج
+                        </span>
+
+                        <span data-graduation="classYear">
+                          دفعة ٢٠٢٧
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="barcode-area" aria-hidden="true">
+
+                  <div class="barcode">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <small>
+                    ACADEMIC-ID / 2027
+                  </small>
+
+                </div>
+
+
+                <!-- SVG SCANNER -->
+                <svg
+                  class="scanner-svg"
+                  id="scannerSvg"
+                  viewBox="0 0 100 160"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+
+                  <defs>
+
+                    <linearGradient
+                      id="scannerGlow"
+                      x1="0"
+                      x2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="rgba(91, 221, 255, 0)"
+                      />
+
+                      <stop
+                        offset="50%"
+                        stop-color="#65e8ff"
+                      />
+
+                      <stop
+                        offset="100%"
+                        stop-color="rgba(91, 221, 255, 0)"
+                      />
+                    </linearGradient>
+
+                  </defs>
+
+                  <line
+                    id="scanLine"
+                    x1="3"
+                    y1="12"
+                    x2="97"
+                    y2="12"
+                    stroke="url(#scannerGlow)"
+                    stroke-width="1.1"
+                  />
+
+                </svg>
+
+              </article>
+
+
+              <!-- ==================================================
+                   GRADUATE SIDE
+              =================================================== -->
+
+              <article class="card-face graduate-face">
+
+                <div class="graduate-glow" aria-hidden="true"></div>
+
+                <div class="graduate-header">
+
+                  <div class="graduate-seal">
+
+                    <svg
+                      viewBox="0 0 100 100"
+                      aria-hidden="true"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="42"
+                        class="seal-ring seal-ring-one"
+                      />
+
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="33"
+                        class="seal-ring seal-ring-two"
+                      />
+
+                      <path
+                        class="seal-check"
+                        d="M31 51 L44 64 L70 37"
+                      />
+                    </svg>
+
+                  </div>
+
+
+                  <div>
+
+                    <span class="micro-label">
+                      تم اعتماد الحالة النهائية
+                    </span>
+
+                    <strong class="verified-copy">
+                      هوية خريج معتمدة
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="graduate-main">
+
+                  <div class="graduate-photo-mini">
+
+                    <img
+                      src="graduate-id.jpg"
+                      alt=""
+                    />
+
+                    <span class="verified-badge">
+                      ✓
+                    </span>
+
+                  </div>
+
+
+                  <div class="graduate-title">
+
+                    <span class="graduate-label">
+                      الخريج
+                    </span>
+
+                    <h1 data-graduation="graduateName">
+                      عمر الكريم
+                    </h1>
+
+                    <p data-graduation="degree">
+                      بكالوريوس طب وجراحة عامة
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div class="graduate-data-grid">
+
+                  <div>
+
+                    <span>
+                      الجامعة
+                    </span>
+
+                    <strong data-graduation="university">
+                      جامعة الموصل
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      الدفعة
+                    </span>
+
+                    <strong data-graduation="classYear">
+                      دفعة ٢٠٢٧
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      الحالة
+                    </span>
+
+                    <strong class="graduate-status">
+                      خريج
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <div class="graduate-footer">
+
+                  <span>
+                    GRADUATE CREDENTIAL
+                  </span>
+
+                  <span class="credential-number">
+                    #GR-2027-001
+                  </span>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- VERIFY AREA -->
+
+      <div class="verify-panel" id="verifyPanel">
+
+        <div class="verify-status">
+
+          <span class="verify-icon" id="verifyIcon">
+            ◌
+          </span>
+
+          <div>
+
+            <span class="verify-label">
+              حالة السجل
+            </span>
+
+            <strong id="verifyText">
+              بانتظار التحقق النهائي
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="primary-button"
+          id="verifyButton"
+          type="button"
+        >
+          <span>
+            التحقق من الحالة النهائية
+          </span>
+
+          <span class="button-arrow">
+            ←
+          </span>
+        </button>
+
+      </div>
+
+
+      <div
+        class="scan-message"
+        id="scanMessage"
+        aria-live="polite"
+      ></div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+         INVITATION CONTENT
+    ======================================================= -->
+
+    <section
+      class="invitation-panel"
+      id="invitationPanel"
+    >
+
+      <div class="invitation-shell">
+
+
+        <header class="invitation-header">
+
+          <span class="section-index">
+            01
+          </span>
+
+          <div>
+
+            <span class="section-kicker">
+              دعوة التخرج
+            </span>
+
+            <h2>
+              تم تحديث الحالة:
+              <span>خريج</span>
+            </h2>
+
+          </div>
+
+        </header>
+
+
+        <div class="invitation-intro">
+
+          <p class="host-line" id="hostLine">
+            بكل الفخر والسرور تدعوكم عائلة الكريم
+          </p>
+
+          <h3>
+            لمشاركتها فرحة تخرج
+          </h3>
+
+          <div class="invitation-name">
+
+            <span>
+              الخريج
+            </span>
+
+            <strong data-graduation="graduateName">
+              عمر الكريم
+            </strong>
+
+          </div>
+
+
+          <p
+            class="graduation-tagline"
+            data-graduation="tagline"
+          >
+            فصل انتهى، وآخر يبدأ.
+          </p>
+
+        </div>
+
+
+
+        <!-- DEGREE CARD -->
+
+        <article class="credential-detail-card">
+
+          <span class="detail-card-code">
+            DEGREE / AWARDED
+          </span>
+
+          <div>
+
+            <span class="detail-label">
+              الدرجة العلمية
+            </span>
+
+            <strong data-graduation="degree">
+              بكالوريوس طب وجراحة عامة
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span class="detail-label">
+              الكلية
+            </span>
+
+            <strong data-graduation="faculty">
+              كلية الطب
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span class="detail-label">
+              الجامعة
+            </span>
+
+            <strong data-graduation="university">
+              جامعة الموصل
+            </strong>
+
+          </div>
+
+
+          <div
+            class="optional-field"
+            data-optional="honors"
+          >
+
+            <span class="detail-label">
+              التقدير
+            </span>
+
+            <strong data-graduation="honors"></strong>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             EVENT
+        =================================================== -->
+
+        <section class="event-section">
+
+          <div class="section-heading">
+
+            <span>
+              02
+            </span>
+
+            <div>
+              <small>
+                CEREMONY RECORD
+              </small>
+
+              <h3>
+                سجل حفل التخرج
+              </h3>
+            </div>
+
+          </div>
+
+
+          <div class="event-grid">
+
+            <article class="event-card">
+
+              <span class="event-icon">
+                01
+              </span>
+
+              <span class="event-label">
+                التاريخ
+              </span>
+
+              <strong id="eventDate">
+                —
+              </strong>
+
+            </article>
+
+
+            <article class="event-card">
+
+              <span class="event-icon">
+                02
+              </span>
+
+              <span class="event-label">
+                الوقت
+              </span>
+
+              <strong id="eventTime">
+                —
+              </strong>
+
+            </article>
+
+
+            <article class="event-card event-card-wide">
+
+              <span class="event-icon">
+                03
+              </span>
+
+              <span class="event-label">
+                موقع الحفل المعتمد
+              </span>
+
+              <strong data-graduation="venue">
+                القاعة الكبرى للاحتفالات
+              </strong>
+
+              <p id="eventAddress">
+                الموصل، نينوى، العراق
+              </p>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             COUNTDOWN
+        =================================================== -->
+
+        <section class="countdown-section">
+
+          <div class="countdown-header">
+
+            <div>
+
+              <span class="section-kicker">
+                DIGITAL ID COUNTER
+              </span>
+
+              <h3>
+                الوقت المتبقي لتفعيل المناسبة
+              </h3>
+
+            </div>
+
+            <span class="live-indicator">
+              <i></i>
+              مباشر
+            </span>
+
+          </div>
+
+
+          <div
+            class="countdown"
+            id="countdown"
+            aria-label="الوقت المتبقي لحفل التخرج"
+          >
+
+            <div class="countdown-unit">
+
+              <strong id="days">
+                ٠٠
+              </strong>
+
+              <span>
+                يوم
+              </span>
+
+            </div>
+
+
+            <div class="countdown-unit">
+
+              <strong id="hours">
+                ٠٠
+              </strong>
+
+              <span>
+                ساعة
+              </span>
+
+            </div>
+
+
+            <div class="countdown-unit">
+
+              <strong id="minutes">
+                ٠٠
+              </strong>
+
+              <span>
+                دقيقة
+              </span>
+
+            </div>
+
+
+            <div class="countdown-unit">
+
+              <strong id="seconds">
+                ٠٠
+              </strong>
+
+              <span>
+                ثانية
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ACTIONS
+        =================================================== -->
+
+        <section class="actions-section">
+
+          <a
+            class="action-button action-primary"
+            id="mapsButton"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              فتح موقع الحفل
+            </span>
+
+            <span>
+              ↗
+            </span>
+          </a>
+
+
+          <button
+            class="action-button"
+            id="calendarButton"
+            type="button"
+          >
+            <span>
+              أضف إلى التقويم
+            </span>
+
+            <span>
+              +
+            </span>
+          </button>
+
+
+          <button
+            class="action-button"
+            id="shareButton"
+            type="button"
+          >
+            <span>
+              مشاركة الدعوة
+            </span>
+
+            <span>
+              ↗
+            </span>
+          </button>
+
+        </section>
+
+
+        <p
+          class="share-feedback"
+          id="shareFeedback"
+          aria-live="polite"
+        ></p>
+
+
+
+        <!-- ==================================================
+             FINAL CREDENTIAL
+        =================================================== -->
+
+        <footer class="final-footer">
+
+          <div>
+
+            <span>
+              الحالة الأكاديمية النهائية
+            </span>
+
+            <strong>
+              تم التخرج بنجاح
+            </strong>
+
+          </div>
+
+          <div class="footer-seal">
+            ✓
+          </div>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
