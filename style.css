@@ -1,0 +1,2000 @@
+/* =========================================================
+   GRAD-001 — GRADUATE ID
+   Arabic / RTL / Mobile First
+========================================================= */
+
+:root {
+  --bg: #050b13;
+  --bg-soft: #081321;
+  --panel: #0c1928;
+
+  --card: #eef5f7;
+  --card-dark: #0d1d2c;
+
+  --ink: #0b1723;
+  --ink-soft: #485969;
+
+  --white: #f7fbfc;
+  --muted: #91a3b2;
+
+  --cyan: #64e5ff;
+  --cyan-soft: rgba(100, 229, 255, 0.14);
+
+  --green: #61e3a7;
+  --green-soft: rgba(97, 227, 167, 0.12);
+
+  --border: rgba(255, 255, 255, 0.09);
+
+  --radius-lg: 30px;
+  --radius-md: 22px;
+  --radius-sm: 16px;
+
+  --shadow:
+    0 35px 90px rgba(0, 0, 0, 0.34);
+
+  --safe-top:
+    max(24px, env(safe-area-inset-top));
+
+  --safe-bottom:
+    max(24px, env(safe-area-inset-bottom));
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+body {
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(47, 112, 163, 0.18),
+      transparent 42%
+    ),
+    var(--bg);
+
+  color: var(--white);
+
+  font-family:
+    "Tahoma",
+    "Arial",
+    sans-serif;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+
+button,
+a {
+  font: inherit;
+}
+
+
+button {
+  border: 0;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+
+.noscript-message {
+  padding: 14px 18px;
+
+  background: #fff3cd;
+  color: #241d00;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.site-shell {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.identity-section {
+  position: relative;
+
+  min-height: 100svh;
+
+  padding:
+    var(--safe-top)
+    18px
+    40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.identity-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 0, 0, 0.2)
+    );
+}
+
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.36;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 34px 34px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+.hero-header,
+.id-stage,
+.verify-panel,
+.scan-message {
+  position: relative;
+  z-index: 2;
+}
+
+
+.hero-header {
+  width: min(100%, 430px);
+
+  margin:
+    0 auto
+    18px;
+}
+
+
+.system-kicker {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding:
+    7px
+    11px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #b8c8d3;
+
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+
+.system-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  box-shadow:
+    0 0 14px var(--cyan);
+}
+
+
+.hero-eyebrow {
+  margin:
+    11px
+    2px
+    0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ID STAGE
+========================================================= */
+
+.id-stage {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  perspective: 1400px;
+}
+
+
+.id-card {
+  width: min(100%, 430px);
+
+  transform-style: preserve-3d;
+}
+
+
+.card-perspective {
+  width: 100%;
+
+  aspect-ratio: 0.69;
+
+  perspective: 1400px;
+}
+
+
+.card-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow);
+}
+
+
+.card-face {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  border-radius: inherit;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   STUDENT SIDE
+========================================================= */
+
+.student-face {
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(228, 241, 246, 0.96)
+    );
+
+  color: var(--ink);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.76);
+}
+
+
+.student-face::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.65) 48%,
+      transparent 56%,
+      transparent 100%
+    );
+
+  opacity: 0.16;
+
+  transform:
+    translateX(-80%)
+    skewX(-10deg);
+}
+
+
+.hologram {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  left: -58px;
+  bottom: 70px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      from 45deg,
+      rgba(57, 229, 255, 0.12),
+      rgba(155, 86, 255, 0.1),
+      rgba(255, 226, 124, 0.1),
+      rgba(57, 229, 255, 0.12)
+    );
+
+  filter: blur(3px);
+
+  opacity: 0.75;
+}
+
+
+.card-top {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    48px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.university-mark {
+  width: 48px;
+  height: 48px;
+
+  position: relative;
+}
+
+
+.university-logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+.seal-fallback {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(14, 35, 53, 0.25);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(52, 116, 154, 0.11),
+      transparent
+    );
+
+  color: #1b4059;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+.university-copy {
+  min-width: 0;
+}
+
+
+.university-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 13px;
+}
+
+
+.micro-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #697b87;
+
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+
+.card-chip {
+  min-width: 40px;
+
+  padding:
+    7px
+    8px;
+
+  border-radius: 8px;
+
+  border:
+    1px solid
+    rgba(16, 36, 52, 0.12);
+
+  background:
+    linear-gradient(
+      135deg,
+      #d7c68c,
+      #f5edcb,
+      #c5ae65
+    );
+
+  color: #524725;
+
+  text-align: center;
+
+  font-size: 9px;
+  font-weight: 900;
+
+  letter-spacing: 0.1em;
+}
+
+
+.student-body {
+  margin-top: 28px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.portrait-frame {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1.02;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #cfdce2;
+}
+
+
+.graduate-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+
+.portrait-frame::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 24, 37, 0.16),
+      transparent 40%
+    );
+}
+
+
+.portrait-corners span {
+  position: absolute;
+
+  width: 19px;
+  height: 19px;
+
+  z-index: 2;
+}
+
+
+.portrait-corners span:nth-child(1) {
+  right: 10px;
+  top: 10px;
+
+  border-right: 2px solid white;
+  border-top: 2px solid white;
+}
+
+
+.portrait-corners span:nth-child(2) {
+  left: 10px;
+  top: 10px;
+
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+}
+
+
+.portrait-corners span:nth-child(3) {
+  right: 10px;
+  bottom: 10px;
+
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+
+.portrait-corners span:nth-child(4) {
+  left: 10px;
+  bottom: 10px;
+
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+
+.student-data {
+  margin-top: 20px;
+}
+
+
+.identity-name {
+  padding-bottom: 16px;
+
+  border-bottom:
+    1px solid
+    rgba(15, 36, 53, 0.12);
+}
+
+
+.identity-name strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size:
+    clamp(
+      22px,
+      7vw,
+      31px
+    );
+
+  line-height: 1.2;
+}
+
+
+.field-label {
+  display: block;
+
+  color: #71828d;
+
+  font-size: 10px;
+}
+
+
+.data-grid {
+  margin-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 13px 16px;
+}
+
+
+.identity-field span:not(.field-label) {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #193347;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.status-pill {
+  width: fit-content;
+
+  padding:
+    4px
+    9px;
+
+  border-radius: 999px;
+}
+
+
+.student-status {
+  background: #e6edf1;
+
+  color: #324b5c !important;
+}
+
+
+.barcode-area {
+  position: absolute;
+
+  right: 20px;
+  left: 20px;
+  bottom: 19px;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+
+.barcode {
+  height: 34px;
+
+  display: flex;
+  align-items: stretch;
+
+  gap: 2px;
+}
+
+
+.barcode span {
+  display: block;
+
+  width: 2px;
+
+  background: #1a2d39;
+}
+
+
+.barcode span:nth-child(2n) {
+  width: 4px;
+}
+
+
+.barcode span:nth-child(3n) {
+  width: 1px;
+}
+
+
+.barcode-area small {
+  color: #7b8b94;
+
+  font-size: 7px;
+
+  direction: ltr;
+}
+
+
+.scanner-svg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+
+#scanLine {
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(92, 231, 255, 0.95)
+    );
+}
+
+
+/* =========================================================
+   GRADUATE FACE
+========================================================= */
+
+.graduate-face {
+  padding: 23px;
+
+  transform: rotateY(180deg);
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(93, 228, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #112b3d,
+      #081421 75%
+    );
+
+  border:
+    1px solid
+    rgba(101, 231, 255, 0.21);
+
+  color: white;
+}
+
+
+.graduate-face::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 20%,
+      rgba(89, 224, 255, 0.055),
+      transparent 64%
+    );
+}
+
+
+.graduate-glow {
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  left: -80px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(62, 218, 255, 0.12);
+
+  filter: blur(45px);
+}
+
+
+.graduate-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+
+.graduate-seal {
+  width: 53px;
+  height: 53px;
+}
+
+
+.graduate-seal svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+.seal-ring {
+  fill: transparent;
+
+  stroke: rgba(101, 231, 255, 0.42);
+
+  stroke-width: 1.5;
+}
+
+
+.seal-ring-two {
+  stroke:
+    rgba(101, 231, 255, 0.15);
+}
+
+
+.seal-check {
+  fill: transparent;
+
+  stroke: #71efb7;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-width: 6;
+}
+
+
+.verified-copy {
+  display: block;
+
+  font-size: 13px;
+}
+
+
+.graduate-main {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 30px;
+}
+
+
+.graduate-photo-mini {
+  position: relative;
+
+  width: 105px;
+  height: 105px;
+
+  overflow: visible;
+}
+
+
+.graduate-photo-mini img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  object-fit: cover;
+  object-position: center 25%;
+
+  filter:
+    saturate(0.85)
+    contrast(1.03);
+}
+
+
+.verified-badge {
+  position: absolute;
+
+  left: -9px;
+  bottom: -9px;
+
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    4px solid
+    var(--card-dark);
+
+  background: var(--green);
+
+  color: #082019;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+.graduate-title {
+  margin-top: 25px;
+}
+
+
+.graduate-label {
+  color: #90a8b8;
+
+  font-size: 10px;
+}
+
+
+.graduate-title h1 {
+  margin:
+    4px
+    0
+    5px;
+
+  font-size:
+    clamp(
+      28px,
+      9vw,
+      42px
+    );
+
+  line-height: 1.05;
+}
+
+
+.graduate-title p {
+  margin: 0;
+
+  max-width: 290px;
+
+  color: #a9bbc7;
+
+  font-size: 12px;
+}
+
+
+.graduate-data-grid {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 28px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 11px;
+}
+
+
+.graduate-data-grid > div {
+  padding:
+    12px
+    13px;
+
+  border-radius: 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+}
+
+
+.graduate-data-grid span {
+  display: block;
+
+  color: #7992a2;
+
+  font-size: 8px;
+}
+
+
+.graduate-data-grid strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 11px;
+}
+
+
+.graduate-status {
+  color: var(--green);
+}
+
+
+.graduate-footer {
+  position: absolute;
+
+  right: 23px;
+  left: 23px;
+  bottom: 20px;
+
+  z-index: 2;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: #668092;
+
+  font-size: 7px;
+
+  direction: ltr;
+}
+
+
+/* =========================================================
+   VERIFY PANEL
+========================================================= */
+
+.verify-panel {
+  width: min(100%, 430px);
+
+  margin:
+    17px auto
+    0;
+
+  padding:
+    13px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(12px);
+}
+
+
+.verify-status {
+  padding:
+    3px
+    4px
+    13px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+
+.verify-icon {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: var(--cyan);
+
+  font-size: 20px;
+}
+
+
+.verify-label {
+  display: block;
+
+  color: #718898;
+
+  font-size: 9px;
+}
+
+
+.verify-status strong {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 12px;
+}
+
+
+.primary-button {
+  width: 100%;
+
+  min-height: 58px;
+
+  padding:
+    0
+    18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  background: var(--white);
+
+  color: #081521;
+
+  font-weight: 800;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+
+.primary-button:active {
+  transform: scale(0.985);
+}
+
+
+.primary-button:disabled {
+  cursor: default;
+
+  opacity: 0.68;
+}
+
+
+.button-arrow {
+  font-size: 20px;
+}
+
+
+.scan-message {
+  width: min(100%, 430px);
+
+  min-height: 25px;
+
+  margin:
+    10px auto
+    0;
+
+  color: #7f96a6;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   INVITATION PANEL
+========================================================= */
+
+.invitation-panel {
+  position: relative;
+
+  padding:
+    70px
+    18px
+    var(--safe-bottom);
+
+  background:
+    #f2f5f5;
+
+  color: #101e29;
+
+  border-radius:
+    36px
+    36px
+    0
+    0;
+
+  transform-origin: top center;
+}
+
+
+.invitation-shell {
+  width: min(100%, 760px);
+
+  margin: 0 auto;
+}
+
+
+.invitation-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  padding-bottom: 26px;
+
+  border-bottom:
+    1px solid
+    rgba(9, 30, 44, 0.11);
+}
+
+
+.section-index {
+  min-width: 43px;
+
+  color: #83929c;
+
+  font-size: 11px;
+
+  direction: ltr;
+}
+
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #71818c;
+
+  font-size: 10px;
+  letter-spacing: 0.05em;
+}
+
+
+.invitation-header h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      26px,
+      8vw,
+      48px
+    );
+
+  line-height: 1.15;
+}
+
+
+.invitation-header h2 span {
+  color: #087b64;
+}
+
+
+.invitation-intro {
+  padding:
+    50px
+    0
+    45px;
+}
+
+
+.host-line {
+  margin: 0;
+
+  color: #586b78;
+
+  font-size: 14px;
+}
+
+
+.invitation-intro h3 {
+  margin:
+    8px
+    0
+    30px;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+
+.invitation-name {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.invitation-name span {
+  color: #85939c;
+
+  font-size: 11px;
+}
+
+
+.invitation-name strong {
+  margin-top: 4px;
+
+  font-size:
+    clamp(
+      40px,
+      13vw,
+      80px
+    );
+
+  line-height: 1.05;
+}
+
+
+.graduation-tagline {
+  max-width: 460px;
+
+  margin:
+    24px
+    0
+    0;
+
+  color: #647682;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CREDENTIAL DETAILS
+========================================================= */
+
+.credential-detail-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    24px
+    20px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 21px;
+
+  border-radius: 24px;
+
+  background: #0c1b28;
+
+  color: white;
+}
+
+
+.credential-detail-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  left: -60px;
+  top: -70px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(80, 222, 255, 0.11);
+
+  filter: blur(35px);
+}
+
+
+.detail-card-code {
+  position: relative;
+
+  color: #6d8597;
+
+  font-size: 8px;
+
+  direction: ltr;
+}
+
+
+.credential-detail-card > div {
+  position: relative;
+
+  padding-bottom: 15px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.credential-detail-card > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+
+.detail-label {
+  display: block;
+
+  color: #728999;
+
+  font-size: 9px;
+}
+
+
+.credential-detail-card strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   EVENT
+========================================================= */
+
+.event-section {
+  padding:
+    80px
+    0
+    25px;
+}
+
+
+.section-heading {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+
+  margin-bottom: 26px;
+}
+
+
+.section-heading > span {
+  min-width: 43px;
+
+  color: #86959f;
+
+  font-size: 11px;
+
+  direction: ltr;
+}
+
+
+.section-heading small {
+  color: #7c8d98;
+
+  font-size: 8px;
+
+  direction: ltr;
+}
+
+
+.section-heading h3 {
+  margin:
+    3px
+    0
+    0;
+
+  font-size: 24px;
+}
+
+
+.event-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 12px;
+}
+
+
+.event-card {
+  min-height: 155px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 21px;
+
+  background: white;
+
+  border:
+    1px solid
+    rgba(11, 30, 42, 0.07);
+}
+
+
+.event-card-wide {
+  grid-column: 1 / -1;
+}
+
+
+.event-icon {
+  color: #87959d;
+
+  font-size: 9px;
+
+  direction: ltr;
+}
+
+
+.event-label {
+  margin-top: auto;
+
+  color: #778791;
+
+  font-size: 9px;
+}
+
+
+.event-card strong {
+  margin-top: 5px;
+
+  font-size: 15px;
+}
+
+
+.event-card p {
+  margin:
+    4px
+    0
+    0;
+
+  color: #71818b;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-section {
+  margin-top: 55px;
+
+  padding:
+    25px
+    18px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0e2130,
+      #07121c
+    );
+
+  color: white;
+}
+
+
+.countdown-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+
+  margin-bottom: 26px;
+}
+
+
+.countdown-header h3 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+
+.live-indicator {
+  flex: 0 0 auto;
+
+  padding:
+    6px
+    9px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #8097a7;
+
+  font-size: 8px;
+}
+
+
+.live-indicator i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 10px
+    var(--green);
+}
+
+
+.countdown {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 9px;
+}
+
+
+.countdown-unit {
+  padding:
+    17px
+    13px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+}
+
+
+.countdown-unit strong {
+  display: block;
+
+  font-size: 29px;
+  line-height: 1;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+
+.countdown-unit span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #7890a1;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.actions-section {
+  margin-top: 46px;
+
+  display: grid;
+  gap: 10px;
+}
+
+
+.action-button {
+  min-height: 62px;
+
+  padding:
+    0
+    18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 17px;
+
+  border:
+    1px solid
+    rgba(8, 29, 42, 0.09);
+
+  background: white;
+
+  color: #152735;
+
+  cursor: pointer;
+
+  font-weight: 700;
+}
+
+
+.action-primary {
+  background: #0b1d2b;
+
+  color: white;
+}
+
+
+.share-feedback {
+  min-height: 24px;
+
+  margin:
+    10px
+    0
+    0;
+
+  color: #667985;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-footer {
+  margin-top: 80px;
+
+  padding:
+    26px
+    0
+    10px;
+
+  border-top:
+    1px solid
+    rgba(11, 32, 45, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.final-footer span {
+  display: block;
+
+  color: #83919a;
+
+  font-size: 9px;
+}
+
+
+.final-footer strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 15px;
+}
+
+
+.footer-seal {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(6, 122, 95, 0.25);
+
+  background:
+    rgba(39, 188, 140, 0.08);
+
+  color: #07815e;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 640px) {
+
+  .identity-section {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+
+  .card-perspective {
+    aspect-ratio: 0.76;
+  }
+
+
+  .student-body {
+    display: grid;
+
+    grid-template-columns:
+      42%
+      1fr;
+
+    gap: 22px;
+  }
+
+
+  .portrait-frame {
+    aspect-ratio: 0.82;
+  }
+
+
+  .student-data {
+    margin-top: 0;
+
+    align-self: center;
+  }
+
+
+  .barcode-area {
+    bottom: 24px;
+  }
+
+
+  .graduate-main {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+
+  .graduate-title {
+    margin-top: 0;
+  }
+
+
+  .graduate-data-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .countdown {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+
+  .actions-section {
+    grid-template-columns:
+      1.3fr
+      1fr
+      1fr;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 960px) {
+
+  .identity-section {
+    min-height: 100vh;
+
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+
+  .id-card,
+  .hero-header,
+  .verify-panel,
+  .scan-message {
+    width: min(100%, 500px);
+  }
+
+
+  .card-perspective {
+    aspect-ratio: 0.79;
+  }
+
+
+  .invitation-panel {
+    padding-top: 95px;
+  }
+
+
+  .credential-detail-card {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .detail-card-code {
+    grid-column: 1 / -1;
+  }
+
+
+  .credential-detail-card > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+
+
+  .student-face::after,
+  .hologram,
+  .scanner-svg {
+    display: none !important;
+  }
+
+}
